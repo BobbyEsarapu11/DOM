@@ -28,8 +28,13 @@
         const input = document.getElementById('input');
 
         btn.addEventListener('click', () => {
-            document.getElementById('head').textContent = `Hello, ${input.value}!`;
-            input.value = ''; // Clear the input field after greeting
+            if (input.value.trim() === '') {
+                alert('Please enter a name');
+            } else {
+                    
+                document.getElementById('head').textContent = `Hello, ${input.value}!`;
+                input.value = ''; // Clear the input field after greeting
+            }
         });
         const box1 = document.querySelector('.box1');
         box1.addEventListener('click', () => {
